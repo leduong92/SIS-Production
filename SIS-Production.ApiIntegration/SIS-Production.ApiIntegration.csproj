@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>SIS_Production.ApiIntegration</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BaseApiClient.cs~RF4de1cf1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIS-Production.Utilities\SIS-Production.Utilities.csproj" />
+    <ProjectReference Include="..\SIS-Production.ViewModels\SIS-Production.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
