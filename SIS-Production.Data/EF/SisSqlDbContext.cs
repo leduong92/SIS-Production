@@ -18,12 +18,12 @@ namespace SIS_Production.Data.EF
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
 
-            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AspNetUserClaims");
-            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AspNetUserRoles").HasKey(x => new { x.UserId, x.RoleId });
-            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AspNetUserLogins").HasKey(x => x.UserId);
+            //modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AspNetUserClaims");
+            //modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AspNetUserRoles").HasKey(x => new { x.UserId, x.RoleId });
+            //modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AspNetUserLogins").HasKey(x => x.UserId);
 
-            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AspNetRoleClaims");
-            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AspNetUserTokens").HasKey(x => x.UserId);
+            //modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AspNetRoleClaims");
+            //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AspNetUserTokens").HasKey(x => x.UserId);
         }
 
         public DbSet<SisProErrorRecord> SisProErrorRecords { get; set; }
