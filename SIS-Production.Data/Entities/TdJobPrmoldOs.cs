@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdJobPrmoldOs
+    public partial class TdJobPrmoldOs
     {
-        public string job_order_no { get; set; }
-        public string line_no { get; set; }
-        public string press_no { get; set; }
-        public string press_name { get; set; }
-        public int rubber_count { get; set; }
-        public int metalcase_count { get; set; }
-        public int rubber_total { get; set; }
-        public int metalcase_total { get; set; }
-        public int status { get; set; }
-        public string start_date { get; set; }
-        public string start_time { get; set; }
-        public string start_user { get; set; }
-        public string end_date { get; set; }
-        public string end_time { get; set; }
-        public string end_user { get; set; }
-        public string reject_date { get; set; }
-        public string reject_time { get; set; }
-        public string reject_user { get; set; }
-        public string washing_date { get; set; }
-        public string washing_time { get; set; }
-        public string washing_user { get; set; }
-        public string washing_status { get; set; }
-        public string start_washing_date { get; set; }
-        public string start_washing_time { get; set; }
-        public string start_washing_user { get; set; }
-        public string start_date_01 { get; set; }
-        public string start_time_01 { get; set; }
-        public string start_user_01 { get; set; }
+        public string JobOrderNo { get; set; }
+        public string LineNo { get; set; }
+        public string PressNo { get; set; }
+        public string PressName { get; set; }
+        public short? RubberCount { get; set; }
+        public short? MetalcaseCount { get; set; }
+        public short? RubberTotal { get; set; }
+        public short? MetalcaseTotal { get; set; }
+        public short? Status { get; set; }
+        public string StartDate { get; set; }
+        public string StartTime { get; set; }
+        public string StartUser { get; set; }
+        public string EndDate { get; set; }
+        public string EndTime { get; set; }
+        public string EndUser { get; set; }
+        public string RejectDate { get; set; }
+        public string RejectTime { get; set; }
+        public string RejectUser { get; set; }
+        public string WashingDate { get; set; }
+        public string WashingTime { get; set; }
+        public string WashingUser { get; set; }
+        public int? WashingStatus { get; set; }
+        public string StartWashingDate { get; set; }
+        public string StartWashingTime { get; set; }
+        public string StartWashingUser { get; set; }
+        public string StartDate01 { get; set; }
+        public string StartTime01 { get; set; }
+        public string StartUser01 { get; set; }
     }
 }

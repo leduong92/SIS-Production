@@ -12,24 +12,24 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdSisCurRecord> builder)
         {
             builder.ToTable("td_sis_cur_record");
-            builder.HasKey(x=>x.id);
+            builder.HasKey(x=>x.Id);
 
-            builder.Property(x => x.line_no).HasMaxLength(10);
-            builder.Property(x => x.press_no).HasMaxLength(12);
-            builder.Property(x => x.type).HasMaxLength(5);
+            builder.Property(x => x.LineNo).HasMaxLength(10);
+            builder.Property(x => x.PressNo).HasMaxLength(12);
+            builder.Property(x => x.Type).HasMaxLength(5);
 
-            builder.Property(x => x.start_date).HasMaxLength(8);
-            builder.Property(x => x.start_time).HasMaxLength(6);
-            builder.Property(x => x.start_user).HasMaxLength(10);
-            builder.Property(x => x.end_date).HasMaxLength(8);
-            builder.Property(x => x.end_time).HasMaxLength(6);
-            builder.Property(x => x.end_user).HasMaxLength(10);
-            builder.Property(x => x.reset_date).HasMaxLength(8);
-            builder.Property(x => x.reset_time).HasMaxLength(6);
-            builder.Property(x => x.reset_user).HasMaxLength(10);
-            builder.Property(x => x.active).HasMaxLength(1);
-            builder.Property(x => x.shift).HasMaxLength(2);
-            builder.Property(x => x.error_type).HasMaxLength(5);
+            builder.Property(x => x.StartDate).HasMaxLength(8);
+            builder.Property(x => x.StartTime).HasMaxLength(6);
+            builder.Property(x => x.StartUser).HasMaxLength(10);
+            builder.Property(x => x.EndDate).HasMaxLength(8);
+            builder.Property(x => x.EndTime).HasMaxLength(6);
+            builder.Property(x => x.EndUser).HasMaxLength(10);
+            builder.Property(x => x.ResetDate).HasMaxLength(8);
+            builder.Property(x => x.ResetTime).HasMaxLength(6);
+            builder.Property(x => x.ResetUser).HasMaxLength(10);
+            builder.Property(x => x.Active).HasMaxLength(1);
+            builder.Property(x => x.Shift).HasMaxLength(2);
+            builder.Property(x => x.ErrorType).HasMaxLength(5);
         }
 
     }

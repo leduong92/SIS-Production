@@ -12,11 +12,11 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdSisErrorMenu> builder)
         {
             builder.ToTable("td_sis_error_menu");
-            builder.HasKey(x=>x.error_id);
+            builder.HasKey(x=>x.ErrorId);
 
-            builder.Property(x => x.error_id).HasMaxLength(5);
-            builder.Property(x => x.error_menu).HasMaxLength(128);
-            builder.Property(x => x.type).HasMaxLength(5);
+            builder.Property(x => x.ErrorId).HasMaxLength(5);
+            builder.Property(x => x.ErrorMenu).HasMaxLength(128);
+            builder.Property(x => x.Type).HasMaxLength(5);
         }
     }
 }

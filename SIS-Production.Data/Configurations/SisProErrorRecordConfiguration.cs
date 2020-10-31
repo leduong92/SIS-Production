@@ -16,7 +16,7 @@ namespace SIS_Production.Data.Configurations
             builder.HasKey(x => x.OperationNumber);
             builder.HasKey(x => x.ProgressOperationCode);
             builder.HasKey(x => x.ProgressOperationSeq);
-            builder.HasKey(x => x.ErrorID);
+            builder.HasKey(x => x.ErrorId);
 
             builder.Property(x => x.JobOrderNo).HasMaxLength(12).IsRequired();
             builder.Property(x => x.OperationNumber).IsRequired();
@@ -32,9 +32,9 @@ namespace SIS_Production.Data.Configurations
             builder.Property(x => x.MachineNo).HasMaxLength(10);
             builder.Property(x => x.ProgressOperationCode).HasMaxLength(6);
             builder.Property(x => x.ProgressOperationName).HasMaxLength(22);
-            builder.Property(x => x.ErrorID).HasMaxLength(10).IsRequired();
+            builder.Property(x => x.ErrorId).HasMaxLength(10).IsRequired();
             builder.Property(x => x.ErrorName).HasMaxLength(255);
-            builder.Property(x => x.ErrorNameJP).HasMaxLength(255);
+            builder.Property(x => x.ErrorNameJp).HasMaxLength(255);
 
             builder.Property(x => x.Notes).HasMaxLength(255);
 
@@ -52,7 +52,7 @@ namespace SIS_Production.Data.Configurations
             builder.Property(x => x.CuringDate).HasMaxLength(10);
             builder.Property(x => x.Department).HasMaxLength(10);
             builder.Property(x => x.Area).HasMaxLength(10);
-            builder.Property(x => x.ProgramID).HasMaxLength(10);
+            builder.Property(x => x.ProgramId).HasMaxLength(10);
             builder.Property(x => x.PressNo).HasMaxLength(5);
         }
     }

@@ -12,11 +12,11 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdSisCurMenu> builder)
         {
             builder.ToTable("td_sis_cur_menu");
-            builder.HasKey(x=>x.menu_id);
+            builder.HasKey(x=>x.MenuId);
 
-            builder.Property(x => x.menu_id).HasMaxLength(10);
-            builder.Property(x => x.menu_name).HasMaxLength(128);
-            builder.Property(x => x.id_4m).HasMaxLength(5);
+            builder.Property(x => x.MenuId).HasMaxLength(10);
+            builder.Property(x => x.MenuName).HasMaxLength(128);
+            builder.Property(x => x.Id4m).HasMaxLength(5);
         }
     }
 }

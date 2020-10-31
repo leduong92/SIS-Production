@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
     public class SiProErrorDetail
     {
-        public int progress_operation_seq { get; set; }
-        public string error_id { get; set; }
-        public string entry_date { get; set; }
-        public string entry_time { get; set; }
-        public string entry_user { get; set; }
-        public string location { get; set; }
-        public string status { get; set; }
-        public string department { get; set; }
-        public string area { get; set; }
-        public string program_id { get; set; }
-        public string error_dept_id { get; set; }
-        public int order_id { get; set; }
+        public short ProgressOperationSeq { get; set; }
+        public string ErrorId { get; set; }
+        public string EntryDate { get; set; }
+        public string EntryTime { get; set; }
+        public string EntryUser { get; set; }
+        public string Location { get; set; }
+        public char? Status { get; set; }
+        public string Department { get; set; }
+        public string Area { get; set; }
+        public string ProgramId { get; set; }
+        public string ErrorDeptId { get; set; }
+        public short? OrderId { get; set; }
     }
 }

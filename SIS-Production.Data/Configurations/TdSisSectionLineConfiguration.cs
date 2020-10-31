@@ -12,10 +12,10 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdSisSectionLine> builder)
         {
             builder.ToTable("td_sis_section_line");
-            builder.HasKey(x=>x.line_no);
+            builder.HasKey(x=>x.LineNo);
 
-            builder.Property(x => x.line_no).HasMaxLength(12);
-            builder.Property(x => x.section_id).HasMaxLength(12);
+            builder.Property(x => x.LineNo).HasMaxLength(12);
+            builder.Property(x => x.SectionId).HasMaxLength(12);
         }
     }
 }

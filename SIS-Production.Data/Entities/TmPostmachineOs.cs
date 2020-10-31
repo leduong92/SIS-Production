@@ -1,29 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TmPostmachineOs
+    public partial class TmPostmachineOs
     {
-        public string line_no { get; set; }
-        public string press_no { get; set; }
-        public string press_name { get; set; }
-        public string location_cd { get; set; }
-        public string temperature { get; set; }
-        public string plc_m { get; set; }
-        public string plc_m1 { get; set; }
-        public string plc_m2 { get; set; }
-        public string ip { get; set; }
-        public int status { get; set; }
-        public string time_use { get; set; }
-        public string entry_date { get; set; }
-        public string update_date { get; set; }
-        public string plc_m3 { get; set; }
-        public int post_cure_type { get; set; }
-        public int mold_type { get; set; }
-        public int trim_type { get; set; }
-        public int devices { get; set; }
-        public string memo { get; set; }
+        public string LineNo { get; set; }
+        public string PressNo { get; set; }
+        public string PressName { get; set; }
+        public string LocationCd { get; set; }
+        public int? Temperature { get; set; }
+        public string PlcM { get; set; }
+        public string PlcM1 { get; set; }
+        public string PlcM2 { get; set; }
+        public string Ip { get; set; }
+        public int? Status { get; set; }
+        public string TimeUse { get; set; }
+        public string EntryDate { get; set; }
+        public string UpdateDate { get; set; }
+        public string PlcM3 { get; set; }
+        public int? PostCureType { get; set; }
+        public int? MoldType { get; set; }
+        public int? TrimType { get; set; }
+        public int? Devices { get; set; }
+        public string Memo { get; set; }
     }
 }

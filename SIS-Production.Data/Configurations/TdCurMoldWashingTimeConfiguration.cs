@@ -12,11 +12,11 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdCurMoldWashingTime> builder)
         {
             builder.ToTable("td_cur_mold_washing_time");
-            builder.HasKey(x=>x.line_no);
+            builder.HasKey(x=>x.LineNo);
 
-            builder.Property(x => x.line_no).HasMaxLength(6);
-            builder.Property(x => x.washing_time).HasMaxLength(4);
-            builder.Property(x => x.type_name).HasMaxLength(10);
+            builder.Property(x => x.LineNo).HasMaxLength(6);
+            builder.Property(x => x.WashingTime).HasMaxLength(4);
+            builder.Property(x => x.TypeName).HasMaxLength(10);
 
         }
     }

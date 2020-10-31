@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdCurMoldWashingTime
+    public partial class TdCurMoldWashingTime
     {
-        public string line_no { get; set; }
-        public string washing_time { get; set; }
-        public string type_name { get; set; }
+        public string LineNo { get; set; }
+        public string WashingTime { get; set; }
+        public string TypeName { get; set; }
     }
 }

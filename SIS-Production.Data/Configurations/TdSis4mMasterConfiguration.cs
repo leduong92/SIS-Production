@@ -12,9 +12,9 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdSis4mMaster> builder)
         {
             builder.ToTable("td_sis_4m_master");
-            builder.HasKey(x=>x.id);
+            builder.HasKey(x=>x.Id);
 
-            builder.Property(x => x.menu_name).HasMaxLength(126);
+            builder.Property(x => x.MenuName).HasMaxLength(126);
 
         }
     }
