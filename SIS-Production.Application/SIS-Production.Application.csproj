@@ -15,8 +15,4 @@
     <ProjectReference Include="..\SIS-Production.ViewModels\SIS-Production.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DefectiveUpdate\" />
-  </ItemGroup>
-
 </Project>

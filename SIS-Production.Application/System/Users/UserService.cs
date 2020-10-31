@@ -2,10 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SIS_Production.Data.EF;
 using SIS_Production.Data.Entities;
 using SIS_Production.ViewModels.Common;
 using SIS_Production.ViewModels.System.Users;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -16,6 +18,7 @@ namespace SIS_Production.Application.System.Users
 {
     public class UserService : IUserService
     {
+        private readonly SisSqlDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
@@ -23,14 +26,15 @@ namespace SIS_Production.Application.System.Users
         public UserService(UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             RoleManager<AppRole> roleManager,
-            IConfiguration configuration
+            IConfiguration configuration,
+            SisSqlDbContext context
             )
         {
-            _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _configuration = configuration;
-
+            _userManager = userManager;
+            _context = context;
         }
 
         public async Task<ApiResult<string>> Authenticate(LoginRequest request)

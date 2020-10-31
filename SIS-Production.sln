@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS-Production.ApiIntegrati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS-Production.ViewModels", "SIS-Production.ViewModels\SIS-Production.ViewModels.csproj", "{DA5CA990-E74D-4614-849D-EBDF0A038F36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS-Production.Utilities", "SIS-Production.Utilities\SIS-Production.Utilities.csproj", "{CD8FE88D-5CDA-4DF4-8F1E-9F4ABB794E4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS-Production.Utilities", "SIS-Production.Utilities\SIS-Production.Utilities.csproj", "{CD8FE88D-5CDA-4DF4-8F1E-9F4ABB794E4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS-Production.DefectiveUpdate", "SIS-Production.DefectiveUpdate\SIS-Production.DefectiveUpdate.csproj", "{5A05A7D8-6620-4845-95C4-18ACC79F933A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS-Production.DefectiveUpdate", "SIS-Production.DefectiveUpdate\SIS-Production.DefectiveUpdate.csproj", "{5A05A7D8-6620-4845-95C4-18ACC79F933A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Solution Items", "{918067B8-FB55-4C4D-99CA-EEDFDA9DA291}"
 	ProjectSection(SolutionItems) = preProject
