@@ -8,12 +8,28 @@ namespace SIS_Production.BackendApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
         public UsersController(IUserService userService)
         {
             _userService = userService;
+        }
+        [HttpPost("authenticate")]
+        [AllowAnonymous]
+
+        public async Task<IActionResult> Authenticate([FromBody]LoginRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.Authenticate(request);
+            if (string.IsNullOrEmpty(result.ResultObj))
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         [HttpPost]
@@ -37,5 +53,7 @@ namespace SIS_Production.BackendApi.Controllers
             var users = await _userService.GetUsersPaging(request);
             return Ok(users);
         }
+
+
     }
 }

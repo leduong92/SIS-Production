@@ -9,6 +9,7 @@ namespace SIS_Production.ApiIntegration
 {
     public interface IUserApiClient
     {
+        Task<ApiResult<string>> Authenticate(LoginRequest request);
         Task<ApiResult<bool>> ResisterUser(RegisterRequest request);
         Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request);
     }
