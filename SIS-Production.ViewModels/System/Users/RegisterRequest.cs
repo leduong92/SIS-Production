@@ -25,7 +25,7 @@ namespace SIS_Production.ViewModels.System.Users
         [Display(Name = "Section")]
         public string Section { get; set; }
         [Display(Name = "Di động")]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Display(Name = "Ngày tạo")]
         [DataType(DataType.Date)]

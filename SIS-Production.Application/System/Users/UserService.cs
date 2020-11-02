@@ -104,7 +104,7 @@ namespace SIS_Production.Application.System.Users
             {
                 return new ApiErrorResult<bool>("Tài khoản đã tồn tại.");
             }
-            if (await _userManager.FindByEmailAsync(request.Phone) != null)
+            if (await _userManager.FindByEmailAsync(request.PhoneNumber) != null)
             {
                 return new ApiErrorResult<bool>("Số điện thoại đã tồn tại.");
             }
@@ -118,7 +118,7 @@ namespace SIS_Production.Application.System.Users
                 Department = request.Department,
                 Section = request.Section,
                 CreatedDate = request.CreatedDate,
-                Phone = request.Phone
+                PhoneNumber = request.PhoneNumber
             };
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
