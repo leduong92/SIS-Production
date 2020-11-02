@@ -44,7 +44,7 @@ namespace SIS_Production.BackendApi
             services.AddDbContext<SisPgDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString(SystemConstants.PgConnection)));
 
-            //DI
+            //DI inject
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
