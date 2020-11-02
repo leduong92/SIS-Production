@@ -35,6 +35,7 @@ namespace SIS_Production.Data.EF
             modelBuilder.ApplyConfiguration(new TdSisSectionMasterConfiguration());
             modelBuilder.ApplyConfiguration(new TrCurJobNbcsConfiguration());
             modelBuilder.ApplyConfiguration(new TrLblInfoNbcsConfiguration());
+            //base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<SiProErrorDetail> SiProErrorDetails { get; set; }
@@ -52,7 +53,7 @@ namespace SIS_Production.Data.EF
         public DbSet<TdSisSectionLine> TdSisSectionLines { get; set; }
         public DbSet<TdSisSectionMaster> TdSisSectionMasters { get; set; }
         public DbSet<TrCurJobNbcs> TrCurJobNbcs { get; set; }
-        public DbSet<TrlblInfoNbcs> TrlblInfoNbcs { get; set; }
+        public DbSet<TrLblInfoNbcs> TrLblInfoNbcs { get; set; }
  
     }
 }

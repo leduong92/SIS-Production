@@ -9,19 +9,19 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<SiProErrorDetail> builder)
         {
             builder.ToTable("si_pro_error_detail");
-            builder.HasKey(t => new { t.progress_operation_seq, t.error_id, t.location, t.department, t.program_id });
+            builder.HasKey(t => new { t.ProgressOperationSeq, t.ErrorId, t.Location, t.Department, t.ProgramId });
 
-            builder.Property(x => x.error_id).HasMaxLength(10);
-            builder.Property(x => x.entry_date).HasMaxLength(8);
-            builder.Property(x => x.entry_time).HasMaxLength(6);
-            builder.Property(x => x.entry_user).HasMaxLength(10);
+            builder.Property(x => x.ErrorId).HasMaxLength(10);
+            builder.Property(x => x.EntryDate).HasMaxLength(8);
+            builder.Property(x => x.EntryTime).HasMaxLength(6);
+            builder.Property(x => x.EntryUser).HasMaxLength(10);
 
-            builder.Property(x => x.location).HasMaxLength(5);
-            builder.Property(x => x.status).HasMaxLength(1);
-            builder.Property(x => x.department).HasMaxLength(10);
-            builder.Property(x => x.area).HasMaxLength(10);
-            builder.Property(x => x.program_id).HasMaxLength(10);
-            builder.Property(x => x.error_dept_id).HasMaxLength(10);
+            builder.Property(x => x.Location).HasMaxLength(5);
+            builder.Property(x => x.Status).HasMaxLength(1);
+            builder.Property(x => x.Department).HasMaxLength(10);
+            builder.Property(x => x.Area).HasMaxLength(10);
+            builder.Property(x => x.ProgramId).HasMaxLength(10);
+            builder.Property(x => x.ErrorDeptId).HasMaxLength(10);
 
         }
     }

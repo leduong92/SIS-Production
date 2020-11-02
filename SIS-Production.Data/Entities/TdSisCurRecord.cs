@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdSisCurRecord
+    public partial class TdSisCurRecord
     {
-        public int id { get; set; }
-        public string line_no { get; set; }
-        public string press_no { get; set; }
-        public string type { get; set; }
-        public string start_date { get; set; }
-        public string start_time { get; set; }
-        public string start_user { get; set; }
-        public string end_date { get; set; }
-        public string end_time { get; set; }
-        public string end_user { get; set; }
-        public string reset_date { get; set; }
-        public string reset_time { get; set; }
-        public string reset_user { get; set; }
-        public string active { get; set; }
-        public string shift { get; set; }
-        public string error_type { get; set; }
-
+        public int Id { get; set; }
+        public string LineNo { get; set; }
+        public string PressNo { get; set; }
+        public string Type { get; set; }
+        public string StartDate { get; set; }
+        public string StartTime { get; set; }
+        public string StartUser { get; set; }
+        public string EndDate { get; set; }
+        public string EndTime { get; set; }
+        public string EndUser { get; set; }
+        public string ResetDate { get; set; }
+        public string ResetTime { get; set; }
+        public string ResetUser { get; set; }
+        public char? Active { get; set; }
+        public string Shift { get; set; }
+        public string ErrorType { get; set; }
     }
 }

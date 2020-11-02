@@ -1,48 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdCurMoldLog
+    public partial class TdCurMoldLog
     {
-        public string mold_up { get; set; }
-        public string mold_down { get; set; }
-        public string setup_date { get; set; }
-        public string setup_time { get; set; }
-        public string setup_user { get; set; }
-        public string prepare_date { get; set; }
-        public string prepare_time { get; set; }
-        public string prepare_user { get; set; }
-        public string start_date { get; set; }
-        public string start_time { get; set; }
-        public string start_user { get; set; }
-        public string end_date { get; set; }
-        public string end_time { get; set; }
-        public string end_user { get; set; }
-        public string pro_user { get; set; }
-        public string status { get; set; }
-        public string mold_job { get; set; }
-        public string confirm_user { get; set; }
-        public string mold_rack_no { get; set; }
-        public string receive_wash_date { get; set; }
-        public string receive_wash_time { get; set; }
-        public string receive_wash_user { get; set; }
-        public string receive_wash_pro_user { get; set; }
-        public string start_wash_date { get; set; }
-        public string start_wash_time { get; set; }
-        public string start_wash_user { get; set; }
-        public string end_wash_date { get; set; }
-        public string end_wash_time { get; set; }
-        public string end_wash_user { get; set; }
-        public string old_mold_job { get; set; }
-        public string delivery_date { get; set; }
-        public string delivery_time { get; set; }
-        public string delivery_user { get; set; }
-        public string group_id { get; set; }
-        public string end_prod_date { get; set; }
-        public string end_prod_time { get; set; }
-        public string end_prod_user { get; set; }
-        public string location_cd { get; set; }
+        public string MoldUp { get; set; }
+        public string MoldDown { get; set; }
+        public string SetupDate { get; set; }
+        public string SetupTime { get; set; }
+        public string SetupUser { get; set; }
+        public string PrepareDate { get; set; }
+        public string PrepareTime { get; set; }
+        public string PrepareUser { get; set; }
+        public string StartDate { get; set; }
+        public string StartTime { get; set; }
+        public string StartUser { get; set; }
+        public string EndDate { get; set; }
+        public string EndTime { get; set; }
+        public string EndUser { get; set; }
+        public string ProUser { get; set; }
+        public string Status { get; set; }
+        public string MoldJob { get; set; }
+        public string ConfirmUser { get; set; }
+        public string MoldRackNo { get; set; }
+        public string ReceiveWashDate { get; set; }
+        public string ReceiveWashTime { get; set; }
+        public string ReceiveWashUser { get; set; }
+        public string ReceiveWashProUser { get; set; }
+        public string StartWashDate { get; set; }
+        public string StartWashTime { get; set; }
+        public string StartWashUser { get; set; }
+        public string EndWashDate { get; set; }
+        public string EndWashTime { get; set; }
+        public string EndWashUser { get; set; }
+        public string OldMoldJob { get; set; }
+        public string DeliveryDate { get; set; }
+        public string DeliveryTime { get; set; }
+        public string DeliveryUser { get; set; }
+        public string GroupId { get; set; }
+        public string EndProdDate { get; set; }
+        public string EndProdTime { get; set; }
+        public string EndProdUser { get; set; }
+        public string LocationCd { get; set; }
     }
 }

@@ -13,28 +13,28 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdCurProgressCheck> builder)
         {
             builder.ToTable("td_cur_progress_check");
-            builder.HasKey(t => new { t.operation_code, t.job_order_no });
+            builder.HasKey(t => new { t.OperationCode, t.JobOrderNo });
 
-            builder.HasIndex(x => x.finished_goods_code);
+            builder.HasIndex(x => x.FinishedGoodsCode);
 
-            builder.Property(x => x.job_order_no).HasMaxLength(6).IsRequired();
-            builder.Property(x => x.finished_goods_code).HasMaxLength(30);
-            builder.Property(x => x.operation_code).HasMaxLength(6);
+            builder.Property(x => x.JobOrderNo).HasMaxLength(6).IsRequired();
+            builder.Property(x => x.FinishedGoodsCode).HasMaxLength(30);
+            builder.Property(x => x.OperationCode).HasMaxLength(6);
 
-            builder.Property(x => x.start_date).HasMaxLength(8);
-            builder.Property(x => x.start_time).HasMaxLength(6);
-            builder.Property(x => x.start_user).HasMaxLength(25);
-            builder.Property(x => x.end_date).HasMaxLength(8);
-            builder.Property(x => x.end_time).HasMaxLength(6);
-            builder.Property(x => x.end_user).HasMaxLength(25);
-            builder.Property(x => x.ng_date).HasMaxLength(8);
-            builder.Property(x => x.ng_time).HasMaxLength(6);
-            builder.Property(x => x.ng_user).HasMaxLength(25);
-            builder.Property(x => x.machine_no).HasMaxLength(10);
-            builder.Property(x => x.confirm_date).HasMaxLength(8);
-            builder.Property(x => x.confirm_time).HasMaxLength(6);
-            builder.Property(x => x.confirm_user).HasMaxLength(25);
-            builder.Property(x => x.cycle_qty).HasDefaultValue(0);
+            builder.Property(x => x.StartDate).HasMaxLength(8);
+            builder.Property(x => x.StartTime).HasMaxLength(6);
+            builder.Property(x => x.StartUser).HasMaxLength(25);
+            builder.Property(x => x.EndDate).HasMaxLength(8);
+            builder.Property(x => x.EndTime).HasMaxLength(6);
+            builder.Property(x => x.EndUser).HasMaxLength(25);
+            builder.Property(x => x.NgDate).HasMaxLength(8);
+            builder.Property(x => x.EndTime).HasMaxLength(6);
+            builder.Property(x => x.EndUser).HasMaxLength(25);
+            builder.Property(x => x.MachineNo).HasMaxLength(10);
+            builder.Property(x => x.ConfirmDate).HasMaxLength(8);
+            builder.Property(x => x.ConfirmTime).HasMaxLength(6);
+            builder.Property(x => x.ConfirmUser).HasMaxLength(25);
+            builder.Property(x => x.CycleQty).HasDefaultValue(0);
         }
     }
 }

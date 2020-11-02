@@ -24,6 +24,7 @@ namespace SIS_Production.Data.EF
 
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AspNetRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AspNetUserTokens").HasKey(x => x.UserId);
+            //base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<SisProErrorRecord> SisProErrorRecords { get; set; }

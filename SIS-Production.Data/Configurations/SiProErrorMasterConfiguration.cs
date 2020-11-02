@@ -9,19 +9,19 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<SiProErrorMaster> builder)
         {
             builder.ToTable("si_pro_error_master");
-            builder.HasKey(x=>x.error_id );
+            builder.HasKey(x=>x.ErrorId );
 
-            builder.Property(x => x.error_id).HasMaxLength(10);
-            builder.Property(x => x.error_name).HasMaxLength(255);
-            builder.Property(x => x.error_name_jp).HasMaxLength(255);
-            builder.Property(x => x.error_name_en).HasMaxLength(255);
+            builder.Property(x => x.ErrorId).HasMaxLength(10);
+            builder.Property(x => x.ErrorName).HasMaxLength(255);
+            builder.Property(x => x.ErrorNameJp).HasMaxLength(255);
+            builder.Property(x => x.ErrorNameEn).HasMaxLength(255);
 
-            builder.Property(x => x.entry_date).HasMaxLength(8);
-            builder.Property(x => x.entry_time).HasMaxLength(6);
-            builder.Property(x => x.entry_user).HasMaxLength(10);
+            builder.Property(x => x.EntryDate).HasMaxLength(8);
+            builder.Property(x => x.EntryTime).HasMaxLength(6);
+            builder.Property(x => x.EntryUser).HasMaxLength(10);
 
-            builder.Property(x => x.location).HasMaxLength(5);
-            builder.Property(x => x.status).HasMaxLength(1);
+            builder.Property(x => x.Location).HasMaxLength(5);
+            builder.Property(x => x.Status).HasMaxLength(1);
 
         }
     }

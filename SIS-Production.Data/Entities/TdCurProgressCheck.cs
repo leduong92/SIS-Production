@@ -1,32 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdCurProgressCheck
+    public partial class TdCurProgressCheck
     {
-        public string job_order_no { get; set; }
-        public string finished_goods_code { get; set; }
-        public string operation_code { get; set; }
-        public int operation_sequence { get; set; }
-        public int order_date { get; set; }
-        public int finished_qty { get; set; }
-        public int ng_qty { get; set; }
-        public string start_date { get; set; }
-        public string start_time { get; set; }
-        public string start_user { get; set; }
-        public string end_date { get; set; }
-        public string end_time { get; set; }
-        public string end_user { get; set; }
-        public string ng_date { get; set; }
-        public string ng_time { get; set; }
-        public string ng_user { get; set; }
-        public int status { get; set; }
-        public string machine_no { get; set; }
-        public string confirm_date { get; set; }
-        public string confirm_time { get; set; }
-        public string confirm_user { get; set; }
-        public string cycle_qty { get; set; }
+        public string JobOrderNo { get; set; }
+        public string FinishedGoodsCode { get; set; }
+        public string OperationCode { get; set; }
+        public short? OperationSequence { get; set; }
+        public int? OrderDate { get; set; }
+        public int? FinishedQty { get; set; }
+        public int? NgQty { get; set; }
+        public string StartDate { get; set; }
+        public string StartTime { get; set; }
+        public string StartUser { get; set; }
+        public string EndDate { get; set; }
+        public string EndTime { get; set; }
+        public string EndUser { get; set; }
+        public string NgDate { get; set; }
+        public string NgTime { get; set; }
+        public string NgUser { get; set; }
+        public short? Status { get; set; }
+        public string MachineNo { get; set; }
+        public string ConfirmDate { get; set; }
+        public string ConfirmTime { get; set; }
+        public string ConfirmUser { get; set; }
+        public int CycleQty { get; set; }
     }
 }

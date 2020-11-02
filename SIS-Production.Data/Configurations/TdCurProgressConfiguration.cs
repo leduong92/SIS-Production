@@ -12,11 +12,11 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdCurProgress> builder)
         {
             builder.ToTable("td_cur_progress");
-            builder.HasKey(t => new { t.operation_code, t.operation_sequence });
+            builder.HasKey(t => new { t.OperationCode, t.OperationSequence });
 
-            builder.Property(x => x.operation_code).HasMaxLength(6);
-            builder.Property(x => x.operation_name).HasMaxLength(22);
-            builder.Property(x => x.special_sign).HasMaxLength(1);
+            builder.Property(x => x.OperationCode).HasMaxLength(6);
+            builder.Property(x => x.OperationName).HasMaxLength(22);
+            builder.Property(x => x.SpecialSign).HasMaxLength(1);
 
         }
     }

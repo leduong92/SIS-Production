@@ -13,39 +13,39 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<TdJobPrmoldOs> builder)
         {
             builder.ToTable("td_job_prmold_os");
-            builder.HasKey(x => x.job_order_no);
+            builder.HasKey(x => x.JobOrderNo);
 
-            builder.HasIndex(x => x.job_order_no);
+            builder.HasIndex(x => x.JobOrderNo);
 
-            builder.Property(x => x.job_order_no).HasMaxLength(12).IsRequired();
-            builder.Property(x => x.line_no).HasMaxLength(6);
-            builder.Property(x => x.press_no).HasMaxLength(3);
-            builder.Property(x => x.press_name).HasMaxLength(20);
+            builder.Property(x => x.JobOrderNo).HasMaxLength(12).IsRequired();
+            builder.Property(x => x.LineNo).HasMaxLength(6);
+            builder.Property(x => x.PressNo).HasMaxLength(3);
+            builder.Property(x => x.PressName).HasMaxLength(20);
 
-            builder.Property(x => x.status).HasDefaultValue(0);
+            builder.Property(x => x.Status).HasDefaultValue(0);
 
-            builder.Property(x => x.start_date).HasMaxLength(8);
-            builder.Property(x => x.start_time).HasMaxLength(6);
-            builder.Property(x => x.start_user).HasMaxLength(25);
-            builder.Property(x => x.end_date).HasMaxLength(8);
-            builder.Property(x => x.end_time).HasMaxLength(6);
-            builder.Property(x => x.end_user).HasMaxLength(25);
-            builder.Property(x => x.reject_date).HasMaxLength(8);
-            builder.Property(x => x.reject_time).HasMaxLength(6);
-            builder.Property(x => x.reject_user).HasMaxLength(25);
-            builder.Property(x => x.washing_date).HasMaxLength(8);
-            builder.Property(x => x.washing_time).HasMaxLength(6);
-            builder.Property(x => x.washing_user).HasMaxLength(25);
+            builder.Property(x => x.StartDate).HasMaxLength(8);
+            builder.Property(x => x.StartTime).HasMaxLength(6);
+            builder.Property(x => x.StartUser).HasMaxLength(25);
+            builder.Property(x => x.EndDate).HasMaxLength(8);
+            builder.Property(x => x.EndTime).HasMaxLength(6);
+            builder.Property(x => x.EndUser).HasMaxLength(25);
+            builder.Property(x => x.RejectDate).HasMaxLength(8);
+            builder.Property(x => x.RejectTime).HasMaxLength(6);
+            builder.Property(x => x.RejectUser).HasMaxLength(25);
+            builder.Property(x => x.WashingDate).HasMaxLength(8);
+            builder.Property(x => x.WashingTime).HasMaxLength(6);
+            builder.Property(x => x.WashingUser).HasMaxLength(25);
 
-            builder.Property(x => x.washing_status).HasDefaultValue(0);
+            builder.Property(x => x.WashingStatus).HasDefaultValue(0);
 
-            builder.Property(x => x.start_washing_date).HasMaxLength(8);
-            builder.Property(x => x.start_washing_time).HasMaxLength(6);
-            builder.Property(x => x.start_washing_user).HasMaxLength(25);
+            builder.Property(x => x.StartWashingDate).HasMaxLength(8);
+            builder.Property(x => x.StartWashingTime).HasMaxLength(6);
+            builder.Property(x => x.StartWashingUser).HasMaxLength(25);
 
-            builder.Property(x => x.start_date_01).HasMaxLength(8);
-            builder.Property(x => x.start_time_01).HasMaxLength(6);
-            builder.Property(x => x.start_user_01).HasMaxLength(10);
+            builder.Property(x => x.StartDate01).HasMaxLength(8);
+            builder.Property(x => x.StartTime01).HasMaxLength(6);
+            builder.Property(x => x.StartUser01).HasMaxLength(10);
 
         }
     }

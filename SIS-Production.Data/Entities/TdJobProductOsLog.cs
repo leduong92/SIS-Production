@@ -1,34 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SIS_Production.Data.Entities
 {
-    public class TdJobProductOsLog
+    public partial class TdJobProductOsLog
     {
-        public string job_order_no { get; set; }
-        public string line_no { get; set; }
-        public string press_no { get; set; }
-        public int mold_status { get; set; }
-        public int trim_status { get; set; }
-        public string entry_date { get; set; }
-        public string entry_time { get; set; }
-        public string entry_user { get; set; }
-        public string start_date { get; set; }
-        public string start_time { get; set; }
-        public string start_user { get; set; }
-        public string end_date { get; set; }
-        public string end_time { get; set; }
-        public string end_user { get; set; }
-        public string reject_date { get; set; }
-        public string reject_time { get; set; }
-        public string reject_user { get; set; }
-        public string washing_date { get; set; }
-        public string washing_time { get; set; }
-        public string washing_user { get; set; }
-        public string memo { get; set; }
-        public string start_washing_date { get; set; }
-        public string start_washing_time { get; set; }
-        public string start_washing_user { get; set; }
+        public string JobOrderNo { get; set; }
+        public string LineNo { get; set; }
+        public string PressNo { get; set; }
+        public short MoldStatus { get; set; }
+        public short TrimStatus { get; set; }
+        public string EntryDate { get; set; }
+        public string EntryTime { get; set; }
+        public string EntryUser { get; set; }
+        public string StartDate { get; set; }
+        public string StartTime { get; set; }
+        public string StartUser { get; set; }
+        public string EndDate { get; set; }
+        public string EndTime { get; set; }
+        public string EndUser { get; set; }
+        public string RejectDate { get; set; }
+        public string RejectTime { get; set; }
+        public string RejectUser { get; set; }
+        public string WashingDate { get; set; }
+        public string WashingTime { get; set; }
+        public string WashingUser { get; set; }
+        public string Memo { get; set; }
+        public string StartWashingDate { get; set; }
+        public string StartWashingTime { get; set; }
+        public string StartWashingUser { get; set; }
     }
 }
