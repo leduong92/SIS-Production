@@ -30,5 +30,12 @@ namespace SIS_Production.ViewModels.System.Users
         [Display(Name = "Ngày tạo")]
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
+        [Display(Name = "Mật khẩu")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Display(Name = "Xác nhận mật khẩu")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
     }
 }

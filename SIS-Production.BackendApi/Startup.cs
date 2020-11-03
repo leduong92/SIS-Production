@@ -56,8 +56,9 @@ namespace SIS_Production.BackendApi
 
             services.AddSwaggerGen(c =>
             {
+                //1. config
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger SIS-Production Solution", Version = "v1" });
-
+                //2. define authorization
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n
@@ -68,7 +69,7 @@ namespace SIS_Production.BackendApi
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
                 });
-
+                //3. add require 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                   {
                     {
