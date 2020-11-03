@@ -54,7 +54,7 @@ namespace SIS_Production.Application.System.Users
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                     Location = x.Location,
-                    Id = x.Id,
+                    //Id = x.UserName,
                     Division = x.Division,
                     Department = x.Department,
                     Section = x.Section
@@ -108,6 +108,7 @@ namespace SIS_Production.Application.System.Users
             {
                 return new ApiErrorResult<bool>("Số điện thoại đã tồn tại.");
             }
+            var hasher = new PasswordHasher<AppUser>();
             user = new AppUser()
             {
                 UserName = request.UserName,
@@ -118,7 +119,8 @@ namespace SIS_Production.Application.System.Users
                 Department = request.Department,
                 Section = request.Section,
                 CreatedDate = request.CreatedDate,
-                PhoneNumber = request.PhoneNumber
+                PhoneNumber = request.PhoneNumber,
+                PasswordHash = hasher.HashPassword(null, request.Password),
             };
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
