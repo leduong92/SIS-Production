@@ -12,8 +12,8 @@ namespace SIS_Production.Data.Configurations
         public void Configure(EntityTypeBuilder<AppRole> builder)
         {
             builder.ToTable("AspNetRoles");
-
-            builder.Property(x => x.Description).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.Name).HasMaxLength(256);
+            builder.Property(x => x.NormalizedName).HasMaxLength(256);
 
         }
     }
