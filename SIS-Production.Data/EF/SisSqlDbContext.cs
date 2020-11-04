@@ -18,6 +18,7 @@ namespace SIS_Production.Data.EF
             modelBuilder.ApplyConfiguration(new SisProErrorRecordConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
 
             modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("AspNetUserClaims").HasKey(x=>x.Id);
             modelBuilder.Entity<IdentityUserRole<string>>().ToTable("AspNetUserRoles").HasKey(x => new { x.UserId, x.RoleId });
@@ -30,5 +31,7 @@ namespace SIS_Production.Data.EF
         }
 
         public DbSet<SisProErrorRecord> SisProErrorRecords { get; set; }
+
+        public DbSet<Language> Languages { get; set; }
     }
 }

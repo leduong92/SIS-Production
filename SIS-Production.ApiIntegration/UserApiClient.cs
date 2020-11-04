@@ -5,7 +5,9 @@ using SIS_Production.Utilities.Constants;
 using SIS_Production.ViewModels.Common;
 using SIS_Production.ViewModels.System.Users;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,12 +46,16 @@ namespace SIS_Production.ApiIntegration
 
         public async Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request)
         {
-            var data = await GetAsync<ApiResult<PagedResult<UserVm>>>(
-                $"/api/users/paging?pageIndex={request.PageIndex}" +
-                $"&pageSize={request.PageSize}" +
-                $"&keyword={request.Keyword}");
+            var client = _httpClientFactory.CreateClient();
+            var sessions = _httpContextAccessor.HttpContext.Session.GetString("Token");
 
-            return data;
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
+            var response = await client.GetAsync($"/api/users/paging?pageIndex=" +
+                $"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}");
+            var body = await response.Content.ReadAsStringAsync();
+            var users = JsonConvert.DeserializeObject<ApiSuccessResult<PagedResult<UserVm>>>(body);
+            return users;
         }
 
         public async Task<ApiResult<bool>> ResisterUser(RegisterRequest request)
