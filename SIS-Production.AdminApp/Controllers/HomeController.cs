@@ -20,6 +20,7 @@ namespace SIS_Production.AdminApp.Controllers
 
         public IActionResult Index()
         {
+            var user = User.Identity.Name; //luc Login se lay duoc thong tin tai method Authenticate
             return View();
         }
 

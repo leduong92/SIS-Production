@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace SIS_Production.AdminApp.Controllers
 {
+    //tat ca truoc khi vao trang Home thi phai Authorize
     [Authorize]
     public class BaseController : Controller
     {
