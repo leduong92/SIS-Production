@@ -13,6 +13,8 @@ namespace SIS_Production.Utilities.Constants
             public const string DefaultLanguageId = "DefaultLanguageId";
             public const string Token = "Token";
             public const string BaseAddress = "BaseAddress";
+            public const string DefaultPassword = "Admin@123";
+            public const string HeaderValue = "Bearer"; 
         }
 
     }

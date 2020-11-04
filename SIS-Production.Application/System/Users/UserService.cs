@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SIS_Production.Data.EF;
 using SIS_Production.Data.Entities;
+using SIS_Production.Utilities.Constants;
 using SIS_Production.ViewModels.Common;
 using SIS_Production.ViewModels.System.Users;
 using System;
@@ -60,6 +61,7 @@ namespace SIS_Production.Application.System.Users
                     Department = x.Department,
                     Section = x.Section,
                     CreatedDate = x.CreatedDate,
+                    Email = x.Email
                     
                 }).ToListAsync();
 
@@ -108,9 +110,9 @@ namespace SIS_Production.Application.System.Users
             {
                 return new ApiErrorResult<bool>("Tài khoản đã tồn tại.");
             }
-            if (await _userManager.FindByEmailAsync(request.PhoneNumber) != null)
+            if (await _userManager.FindByEmailAsync(request.Email) != null)
             {
-                return new ApiErrorResult<bool>("Số điện thoại đã tồn tại.");
+                return new ApiErrorResult<bool>("Email đã tồn tại.");
             }
             var hasher = new PasswordHasher<AppUser>();
             user = new AppUser()
@@ -125,7 +127,8 @@ namespace SIS_Production.Application.System.Users
                 Section = request.Section,
                 CreatedDate = request.CreatedDate,
                 PhoneNumber = request.PhoneNumber,
-                PasswordHash = request.Password == null ? hasher.HashPassword(null, "Admin@123") :  hasher.HashPassword(null, request.Password),
+                Email = request.Email,
+                PasswordHash = request.Password == null ? hasher.HashPassword(null, SystemConstants.AppSettings.DefaultPassword) :  hasher.HashPassword(null, request.Password),
             };
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
@@ -133,6 +136,47 @@ namespace SIS_Production.Application.System.Users
                 return new ApiSuccessResult<bool>();
             }
             return new ApiErrorResult<bool>("Đăng ký tài khoản thất bại.");
+        }
+
+        public async Task<ApiResult<bool>> Update(string id, UserUpdateRequest request)
+        {
+            if (await _userManager.Users.AnyAsync(x=>x.UserName == request.UserName && x.Id != id))
+            {
+                return new ApiErrorResult<bool>("Tài khoản đã tồn tại.");
+            }
+            var user = await _userManager.FindByIdAsync(id);
+            user.UserName = request.UserName;
+            user.Email = request.Email;
+            user.FirstName = request.FirstName;
+            user.LastName = request.LastName;
+            user.PhoneNumber = request.PhoneNumber;
+            user.SecurityStamp = Guid.NewGuid().ToString();
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return new ApiSuccessResult<bool>();
+            }
+            return new ApiErrorResult<bool>("Cập nhật không thành công");
+        }
+
+        public async Task<ApiResult<UserVm>> GetById(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return new ApiErrorResult<UserVm>("User không tồn tại");
+            }
+            var userVm = new UserVm()
+            {
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                CreatedDate = user.CreatedDate,
+                Id = user.Id,
+                Email = user.Email
+            };
+            return new ApiSuccessResult<UserVm>(userVm);
         }
     }
 }

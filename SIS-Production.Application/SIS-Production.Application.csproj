@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SIS-Production.Data\SIS-Production.Data.csproj" />
+    <ProjectReference Include="..\SIS-Production.Utilities\SIS-Production.Utilities.csproj" />
     <ProjectReference Include="..\SIS-Production.ViewModels\SIS-Production.ViewModels.csproj" />
   </ItemGroup>
 
