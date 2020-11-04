@@ -12,5 +12,7 @@ namespace SIS_Production.ApiIntegration
         Task<ApiResult<string>> Authenticate(LoginRequest request);
         Task<ApiResult<bool>> ResisterUser(RegisterRequest request);
         Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request);
+        Task<ApiResult<bool>> UpdateUser(string id, UserUpdateRequest request);
+        Task<ApiResult<UserVm>> GetById(string id);
     }
 }

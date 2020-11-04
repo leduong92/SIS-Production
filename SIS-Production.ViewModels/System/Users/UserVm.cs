@@ -22,6 +22,7 @@ namespace SIS_Production.ViewModels.System.Users
         public string Department { get; set; }
         public string Section { get; set; }
         public string Location { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }

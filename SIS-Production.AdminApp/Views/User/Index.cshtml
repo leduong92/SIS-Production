@@ -6,9 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Scripts {
+    <script src="/vendor/chart.js/Chart.min.js"></script>
     <script>
         setTimeout(function () {
-            #('#msgAlert').fadeOut('slow');
+            $('#msgAlert').fadeOut('slow');
         }, 2000);
     </script>
 }
@@ -70,6 +71,9 @@
                             Location
                         </th>
                         <th>
+                            Email
+                        </th>
+                        <th>
                             Create
                         </th>
                         <th></th>
@@ -107,12 +111,16 @@
                                 @Html.DisplayFor(modelItem => item.Location)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.CreatedDate)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                @Html.ActionLink("Phân quyền", "RoleAssign", new { id = item.Id })
                             </td>
                         </tr>
                     }

@@ -13,5 +13,7 @@ namespace SIS_Production.Application.System.Users
         Task<ApiResult<bool>> Register(RegisterRequest request);
 
         Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request);
+        Task<ApiResult<bool>> Update(string id, UserUpdateRequest request);
+        Task<ApiResult<UserVm>> GetById(string id);
     }
 }
