@@ -29,7 +29,7 @@ namespace SIS_Production.AdminApp.Controllers
             _userApiClient = userApiClient;
             _configuration = configuration;
         }
-        [HttpGet]
+        [HttpGet] //2 phuong thuc deu la Get, Cung ten thi se chia ra bang Alias
         public async Task<IActionResult> Index()
         {
             //login = CookieAuthenticationDefaults.AuthenticationScheme thi logout = CookieAuthenticationDefaults.AuthenticationScheme
@@ -59,8 +59,8 @@ namespace SIS_Production.AdminApp.Controllers
                 ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
                 IsPersistent = false //cookies persistent nen khi tat di va bat lai website van o trang thai dang nhap . 
             };
-            HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, _configuration[SystemConstants.AppSettings.DefaultLanguageId]);
-            HttpContext.Session.SetString(SystemConstants.AppSettings.Token, result.ResultObj);
+            HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, _configuration[SystemConstants.AppSettings.DefaultLanguageId]); //set default language
+            HttpContext.Session.SetString(SystemConstants.AppSettings.Token, result.ResultObj); //set token cho sessions
             //login without Identity
             await HttpContext.SignInAsync(
                         CookieAuthenticationDefaults.AuthenticationScheme,

@@ -46,10 +46,12 @@ namespace SIS_Production.AdminApp
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IUserApiClient, UserApiClient>();
 
+            //1. cai dat Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+            //Config nhu nay de khi su dung F5 tren web khong phai Build lai Project
             IMvcBuilder builder = services.AddRazorPages();
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 

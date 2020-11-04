@@ -44,7 +44,7 @@ namespace SIS_Production.ApiIntegration
             }
             return JsonConvert.DeserializeObject<TResponse>(body);
         }
-
+        //1. Cai dat Newtonsoft.Json
         public async Task<List<T>> GetListAsync<T>(string url, bool requiredLogin = false)
         {
             var sessions = _httpContextAccessor
