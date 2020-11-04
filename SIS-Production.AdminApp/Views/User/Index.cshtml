@@ -8,7 +8,7 @@
 @section Scripts {
     <script>
         setTimeout(function () {
-            @('#msgAlert').fadeOut('slow');
+            #('#msgAlert').fadeOut('slow');
         }, 2000);
     </script>
 }
@@ -31,8 +31,8 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <div class="row" >
-                @if(ViewBag.SuccessMsg != null)
+            <div class="row">
+                @if (ViewBag.SuccessMsg != null)
                 {
                     <div id="msgAlert" class="alert alert-success" role="alert">
                         @ViewBag.SuccessMsg
@@ -118,7 +118,7 @@
                     }
                 </tbody>
             </table>
-
         </div>
+        @await Component.InvokeAsync("Pager", Model)
     </div>
 </div>

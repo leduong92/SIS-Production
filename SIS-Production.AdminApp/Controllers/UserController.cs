@@ -40,6 +40,8 @@ namespace SIS_Production.AdminApp.Controllers
             }
             return View(data.ResultObj);
         }
+
+
         [HttpGet]
         public IActionResult Create()
         {
