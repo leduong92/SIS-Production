@@ -16,7 +16,7 @@ namespace SIS_Production.BackendApi.Controllers
         {
             _userService = userService;
         }
-        [HttpPost("authenticate")]
+        [HttpPost("authenticate")] //neu 2 method cung veb thi se tach nhau bang Alias
         [AllowAnonymous]
 
         public async Task<IActionResult> Authenticate([FromBody]LoginRequest request)
@@ -34,7 +34,7 @@ namespace SIS_Production.BackendApi.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromForm] RegisterRequest request)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -46,7 +46,7 @@ namespace SIS_Production.BackendApi.Controllers
             }
             return Ok(result);
         }
-
+        //http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=
         [HttpGet("paging")]
         public async Task<IActionResult> GetAllPaging([FromQuery]GetUserPagingRequest request)
         {

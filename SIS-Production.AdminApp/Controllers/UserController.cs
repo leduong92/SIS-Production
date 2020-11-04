@@ -40,7 +40,11 @@ namespace SIS_Production.AdminApp.Controllers
             }
             return View(data.ResultObj);
         }
-
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Create(RegisterRequest request)
         {
@@ -61,6 +65,7 @@ namespace SIS_Production.AdminApp.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Remove("Token"); //luu token trong session nen khi logout thi phai remove di
             return RedirectToAction("Index", "Login");
         }
     }

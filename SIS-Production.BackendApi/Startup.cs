@@ -24,6 +24,7 @@ namespace SIS_Production.BackendApi
 {
     public class Startup
     {
+       
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,10 +35,11 @@ namespace SIS_Production.BackendApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //add DB Context, nen su dung Global Project de su dung chung
             services.AddDbContext<SisSqlDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.SqlConnection)));
 
-            services.AddIdentity<AppUser, AppRole>()
+            services.AddIdentity<AppUser, AppRole>() //Add Identity de su dung Identity Framework cho User va Roles
                 .AddEntityFrameworkStores<SisSqlDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -45,6 +47,7 @@ namespace SIS_Production.BackendApi
                 options.UseNpgsql(Configuration.GetConnectionString(SystemConstants.PgConnection)));
 
             //DI inject
+            //khi khai bao 1 service nao do thi se phai inject vao day. Neu khong app se bi die
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
@@ -54,6 +57,10 @@ namespace SIS_Production.BackendApi
             services.AddControllers()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
 
+
+            //1. Cai dat Swashbuckle.AspNetCore
+            //2. Cai dat Microsoft.AspNetCore.Authentication.JwtBearer
+            //add swagger de test API
             services.AddSwaggerGen(c =>
             {
                 //1. config
@@ -89,6 +96,7 @@ namespace SIS_Production.BackendApi
                     });
             });
 
+            //Add authentication cho Project, de kiem tra tinh hop le khi login
             string issuer = Configuration.GetValue<string>("Tokens:Issuer");
             string signingKey = Configuration.GetValue<string>("Tokens:Key");
             byte[] signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);

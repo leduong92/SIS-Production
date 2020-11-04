@@ -9,18 +9,29 @@ namespace SIS_Production.ViewModels.System.Users
     {
         public RegisterRequestValidator()
         {
-            RuleFor(x => x.UserName).NotEmpty().WithMessage("User name is required")
-                .MaximumLength(20).WithMessage("User name can not over 20 characters");
             RuleFor(x => x.FirstName).NotEmpty().WithMessage("First name is required")
-                .MaximumLength(50).WithMessage("First name can not over 50 characters");
+                .MaximumLength(200).WithMessage("First name can not over 200 characters");
+
             RuleFor(x => x.LastName).NotEmpty().WithMessage("Last name is required")
-               .MaximumLength(50).WithMessage("Last name can not over 50 characters");
-            RuleFor(x => x.Department).NotEmpty().WithMessage("Department is required")
-                .MaximumLength(50).WithMessage("Department can not empty");
-            RuleFor(x => x.Division).NotEmpty().WithMessage("Division is required")
-                .MaximumLength(50).WithMessage("Division can not empty");
-            RuleFor(x => x.Section).NotEmpty().WithMessage("Section is required")
-                .MaximumLength(50).WithMessage("Section can not empty");
+                .MaximumLength(200).WithMessage("Last name can not over 200 characters");
+
+            RuleFor(x => x.CreatedDate).GreaterThan(DateTime.Now.AddYears(-100)).WithMessage("Create cannot greater than 100 years");
+
+            RuleFor(x => x.Email).Matches(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").WithMessage("Email format not match");
+
+            RuleFor(x => x.PhoneNumber).NotEmpty().WithMessage("Phone number is required");
+
+            RuleFor(x => x.UserName).NotEmpty().WithMessage("User name is required");
+
+            RuleFor(x => x.Password).MinimumLength(6).WithMessage("Password is at least 6 characters");
+
+            RuleFor(x => x).Custom((request, context) =>
+            {
+                if (request.Password != request.ConfirmPassword)
+                {
+                    context.AddFailure("Confirm password is not match");
+                }
+            });
         }
     }
 }

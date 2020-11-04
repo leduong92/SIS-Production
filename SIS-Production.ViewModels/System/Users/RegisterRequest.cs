@@ -26,7 +26,8 @@ namespace SIS_Production.ViewModels.System.Users
         public string Section { get; set; }
         [Display(Name = "Di động")]
         public string PhoneNumber { get; set; }
-
+        [Display(Name = "Email")]
+        public string Email { get; set; }
         [Display(Name = "Ngày tạo")]
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }

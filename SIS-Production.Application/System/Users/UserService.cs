@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace SIS_Production.Application.System.Users
 {
+    
     public class UserService : IUserService
     {
         private readonly SisSqlDbContext _context;
@@ -114,6 +115,7 @@ namespace SIS_Production.Application.System.Users
             var hasher = new PasswordHasher<AppUser>();
             user = new AppUser()
             {
+                Id = request.UserName,
                 UserName = request.UserName,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
@@ -123,7 +125,7 @@ namespace SIS_Production.Application.System.Users
                 Section = request.Section,
                 CreatedDate = request.CreatedDate,
                 PhoneNumber = request.PhoneNumber,
-                PasswordHash = hasher.HashPassword(null, request.Password),
+                PasswordHash = request.Password == null ? hasher.HashPassword(null, "Admin@123") :  hasher.HashPassword(null, request.Password),
             };
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
@@ -132,6 +134,5 @@ namespace SIS_Production.Application.System.Users
             }
             return new ApiErrorResult<bool>("Đăng ký tài khoản thất bại.");
         }
-
     }
 }

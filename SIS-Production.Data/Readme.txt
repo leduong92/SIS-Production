@@ -1,0 +1,9 @@
+﻿# Install
+	1. Microsoft.AspNetCore.Identity.EntityFrameworkCore
+	2. Microsoft.EntityFrameworkCore.Design
+	3. Microsoft.EntityFrameworkCore.SqlServer
+	4. Microsoft.EntityFrameworkCore.Tools
+	5. Microsoft.Extensions.Configuration.FileExtensions
+	6. Microsoft.Extensions.Configuration.Json
+	7. Npgsql.EntityFrameworkCore.PostgreSQL
+	8. Npgsql.EntityFrameworkCore.POstgreSQL.Design
