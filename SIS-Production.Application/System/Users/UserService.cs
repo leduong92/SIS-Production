@@ -54,10 +54,12 @@ namespace SIS_Production.Application.System.Users
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                     Location = x.Location,
-                    //Id = x.UserName,
+                    Id = x.Id,
                     Division = x.Division,
                     Department = x.Department,
-                    Section = x.Section
+                    Section = x.Section,
+                    CreatedDate = x.CreatedDate,
+                    
                 }).ToListAsync();
 
             var pagedResult = new PagedResult<UserVm>()

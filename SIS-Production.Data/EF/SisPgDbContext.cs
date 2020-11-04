@@ -35,6 +35,7 @@ namespace SIS_Production.Data.EF
             modelBuilder.ApplyConfiguration(new TdSisSectionMasterConfiguration());
             modelBuilder.ApplyConfiguration(new TrCurJobNbcsConfiguration());
             modelBuilder.ApplyConfiguration(new TrLblInfoNbcsConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
             //base.OnModelCreating(modelBuilder);
         }
 
@@ -54,6 +55,8 @@ namespace SIS_Production.Data.EF
         public DbSet<TdSisSectionMaster> TdSisSectionMasters { get; set; }
         public DbSet<TrCurJobNbcs> TrCurJobNbcs { get; set; }
         public DbSet<TrLblInfoNbcs> TrLblInfoNbcs { get; set; }
- 
+
+        public DbSet<Language> Languages { get; set; }
+
     }
 }

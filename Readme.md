@@ -16,10 +16,6 @@ ET Core 3.1
 - After migrate database successful, set Startup Project is eShopSolution.WebApp
 - Change database connection in appsettings.Development.json in eShopSolution.WebApp project.
 - Choose profile to run or press F5
-## How to contribute
-- Fork and create your branch
-- Create Pull request to us.
-
 ## Admin template: https://startbootstrap.com/templates/sb-admin/
 ## Portal template: https://www.free-css.com/free-css-templates/page194/bootstrap-shop
 
