@@ -29,12 +29,13 @@ namespace SIS_Production.AdminApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
-
+            //scheme defaults luc add authen thi tat ca phai dung scheme default
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
+                    //luc chua dang nhap se tu redirect ve Login, index
                     options.LoginPath = "/Login/Index";
-                    options.AccessDeniedPath = "/User/Forbidden/";
+                    options.AccessDeniedPath = "/User/Forbidden/"; //bi denined thi sang trang forbidden
                 });
 
 

@@ -32,6 +32,8 @@ namespace SIS_Production.AdminApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            //login = CookieAuthenticationDefaults.AuthenticationScheme thi logout = CookieAuthenticationDefaults.AuthenticationScheme
+            //logout nhung session cu di
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return View();
         }
@@ -55,10 +57,11 @@ namespace SIS_Production.AdminApp.Controllers
             var authProperties = new AuthenticationProperties
             {
                 ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
-                IsPersistent = false
+                IsPersistent = false //cookies persistent nen khi tat di va bat lai website van o trang thai dang nhap . 
             };
             HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, _configuration[SystemConstants.AppSettings.DefaultLanguageId]);
             HttpContext.Session.SetString(SystemConstants.AppSettings.Token, result.ResultObj);
+            //login without Identity
             await HttpContext.SignInAsync(
                         CookieAuthenticationDefaults.AuthenticationScheme,
                         userPrincipal,

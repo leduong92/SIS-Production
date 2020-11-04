@@ -86,8 +86,9 @@ namespace SIS_Production.Application.System.Users
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
+                new Claim(ClaimTypes.GivenName,  user.FirstName),
                 new Claim(ClaimTypes.Role, string.Join(";",roles)),
-                new Claim(ClaimTypes.Name, request.UserName)
+                new Claim(ClaimTypes.Name, request.UserName) //nhung thong tin gi muon hien ra Website thi se duoc gan vao day
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
