@@ -1,6 +1,6 @@
 using System;
 
-namespace SIS_Production.DefectiveUpdate.Models
+namespace SIS_Production.WebApp.Models
 {
     public class ErrorViewModel
     {

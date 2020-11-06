@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>SIS_Production.DefectiveUpdate</RootNamespace>
+    <RootNamespace>SIS_Production.WebApp</RootNamespace>
   </PropertyGroup>
 
 </Project>

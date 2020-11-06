@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace SIS_Production.DefectiveUpdate
+namespace SIS_Production.WebApp
 {
     public class Program
     {

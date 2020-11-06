@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SIS_Production.DefectiveUpdate.Models;
+using SIS_Production.WebApp.Models;
 
-namespace SIS_Production.DefectiveUpdate.Controllers
+namespace SIS_Production.WebApp.Controllers
 {
     public class HomeController : Controller
     {
