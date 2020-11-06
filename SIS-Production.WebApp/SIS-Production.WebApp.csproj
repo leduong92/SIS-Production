@@ -5,4 +5,8 @@
     <RootNamespace>SIS_Production.WebApp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\themes\less\oregional\" />
+  </ItemGroup>
+
 </Project>
