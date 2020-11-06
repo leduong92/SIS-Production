@@ -49,6 +49,7 @@ namespace SIS_Production.AdminApp
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IUserApiClient, UserApiClient>();
+            services.AddTransient<ILanguageApiClient, LanguageApiClient>();
 
             //1. cai dat Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
             //Config nhu nay de khi su dung F5 tren web khong phai Build lai Project

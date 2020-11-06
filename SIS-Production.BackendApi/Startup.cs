@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SIS_Production.Application.System.Languages;
 using SIS_Production.Application.System.Users;
 using SIS_Production.Data.EF;
 using SIS_Production.Data.Entities;
@@ -53,6 +54,7 @@ namespace SIS_Production.BackendApi
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ILanguageService, LanguageService>();
 
             services.AddControllers()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());

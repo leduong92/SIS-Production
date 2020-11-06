@@ -59,6 +59,7 @@ namespace SIS_Production.AdminApp.Controllers
                 ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
                 IsPersistent = false //cookies persistent nen khi tat di va bat lai website van o trang thai dang nhap . 
             };
+            //step 1: setup default language cho sessions
             HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, _configuration[SystemConstants.AppSettings.DefaultLanguageId]); //set default language
             HttpContext.Session.SetString(SystemConstants.AppSettings.Token, result.ResultObj); //set token cho sessions
             //login without Identity
